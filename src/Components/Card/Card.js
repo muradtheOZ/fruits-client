@@ -13,8 +13,10 @@ const Card = (props) => {
     //Route change and transport mode set
     const history = useHistory()
     const showRoute = (props) => {
-        console.log('selected transport', props);
-        setTransportMode(props);
+        setTransportMode({
+            name:strMeal,
+            price: 200
+        });
         history.push('/routes')
     }
 
@@ -32,7 +34,7 @@ const Card = (props) => {
                 </div>
                 <div className="card-body d-flex">
                     <h3 className="card-link pe-3">$200</h3>
-                    <button type="button" className="btn btn-warning pe-3  ms-5 ps-3 "  onClick={() => showRoute(strMeal)}> Buy Now</button>
+                    <button type="button" className="btn btn-warning pe-3  ms-5 ps-3 "  onClick={showRoute}> Buy Now</button>
                     
                 </div>
             </div>

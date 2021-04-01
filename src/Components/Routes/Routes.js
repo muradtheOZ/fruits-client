@@ -24,27 +24,49 @@ const Routes = () => {
     
     
       }
+      console.log(transportMode);
       
     return (
-      <div className="row">
-        <div className="col-lg-4 col-md-12">
-          <h1>Transport Mode {transportMode}</h1>
-          <form className="sign-up" onSubmit={handleSubmit(onSubmit)}>
-            <input name="departure"  ref={register({ required: true })} placeholder="Your Departure" />
-            {errors.name && <span className="error">Name is required</span>}
+      <div className="custom-padding">
+      <div className="row container  card p-2 m-2 m-auto">
+       <div className="row custom-border pt-2 mt-2">
+         <div className="col-md-6">
+            <h5>Description</h5>
+         </div>
 
-            <input name="destination"   ref={register({ required: true })}placeholder="Your Destination" />
-            {errors.name && <span className="error">Destination is required</span>}
+         <div className="col-md-5 d-flex">
+            <h5>Quantity</h5>
+            <h5 className="ms-auto">Price</h5>
+         </div>
 
-            <input type='datetime-local' name="date" ref={register({ required: true })} placeholder="Enter your address" />
-            {errors.name && <span className="error">Date is required</span>}
+       </div>
 
-            <input type="submit" />
-        </form>  
-        </div>
+       <div className="row custom-border pt-2 mt-2">
+       <div className="col-md-6">
+       <h5>{transportMode.name}</h5>
+         </div>
 
-        <div className="col-lg-7" col-md-12> 
-        </div>
+         <div className="col-md-5 d-flex">
+         <h5>1</h5>
+            <h5 className="ms-auto">{transportMode.price}</h5>
+         </div>
+
+       </div>
+
+       <div className="row custom pt-2 mt-2">
+       <div className="col-md-6">
+            <h5>Total</h5>
+         </div>
+
+         <div className="col-md-5 d-flex">
+            <h5 className="ms-auto">{transportMode.price}</h5>
+         </div>
+
+       </div>
+
+
+      </div>
+
       </div>
         
             

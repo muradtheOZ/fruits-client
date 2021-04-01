@@ -13,3 +13,13 @@
 .error{
     color: red;
 }
+.custom-padding{
+    padding-top: 10%;
+}
+.custom-border{
+    margin-left: 2px;
+    border-bottom: 1px solid tomato;
+}
+.custom{
+    margin-left: 2px;
+}

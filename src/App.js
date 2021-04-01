@@ -17,7 +17,10 @@ export const userContext = createContext();
 function App() {
   //state saving 
   const [loggedInUSer, setLoggedInUser] = useState({});
-  const[transportMode,setTransportMode] = useState('');
+  const[transportMode,setTransportMode] = useState({
+    name:'',
+    price:''
+  });
   const[transportInfo,seTTransportInfo] = useState({})
   
   return (
