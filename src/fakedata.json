@@ -1,0 +1,7 @@
+[{"id":1,"type":"car","transport1":{"people":4,"cost":500},"transport2":{"people":2,"cost":300},"transport3":{"people":6,"cost":900},"transport4":{"people":7,"cost":1000},"image":"https://i.ibb.co/7j8ZKnf/car.png","pepIcon":"https://i.ibb.co/PjCsjvd/peopleicon.png"},
+
+{"id":2,"type":"train","transport1":{"people":2,"cost":200},"transport2":{"people":4,"cost":400},"transport3":{"people":5,"cost":500},"transport4":{"people":6,"cost":600},"image":"https://i.ibb.co/GM7JrxY/train.png","pepIcon":"https://i.ibb.co/PjCsjvd/peopleicon.png"},
+
+{"id":3,"type":"bike","transport1":{"people":1,"cost":50},"transport2":{"people":2,"cost":100},"image":"https://i.ibb.co/DtQpcMg/bike.png","pepIcon":"https://i.ibb.co/PjCsjvd/peopleicon.png"},
+
+{"id":4,"type":"bus","transport1":{"people":4,"cost":50},"transport2":{"people":1,"cost":10},"transport3":{"people":7,"cost":70},"transport4":{"people":15,"cost":90},"image":"https://i.ibb.co/nRgjMN5/bus.png","pepIcon":"https://i.ibb.co/PjCsjvd/peopleicon.png"}]
