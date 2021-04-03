@@ -9,9 +9,12 @@ const Home = () => {
 
 
     useEffect(() =>{
-        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=m')
+        fetch('http://localhost:5000/products')
         .then(response => response.json())
-        .then(data => setFruits(data.meals));
+        .then(data =>{
+            setFruits(data)
+            console.log(data);
+        });
     },[])
     return (
 

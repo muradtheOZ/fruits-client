@@ -7,11 +7,15 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Routes from './Components/Routes/Routes';
+import Routes from './Components/Order/Order';
 import Login from './Components/Login/Login';
 import { createContext,useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Pricing from './Components/Pricing/Pricing';
+import Shipment from './Components/Shipment/Shipment';
+import Admin from './Components/Admin/Admin';
+import AddProductd from "./Components/AddProductd/AddProductd";
+import ManageProduct from "./Components/ManageProduct/ManageProduct";
 export const userContext = createContext();
 
 function App() {
@@ -22,9 +26,10 @@ function App() {
     price:''
   });
   const[transportInfo,seTTransportInfo] = useState({})
+  const[orderedFruits,setOrderedFruits] = useState([]);
   
   return (
-    <userContext.Provider value={{ value: [loggedInUSer,setLoggedInUser], value2: [transportMode,setTransportMode], value3:[transportInfo,seTTransportInfo] }}>
+    <userContext.Provider value={{ value: [loggedInUSer,setLoggedInUser], value2: [transportMode,setTransportMode], value3:[transportInfo,seTTransportInfo],value4:[orderedFruits,setOrderedFruits] }}>
     <Router>
     <Header/>
       <Route path="/header">
@@ -37,6 +42,15 @@ function App() {
           <PrivateRoute path="/routes">
             <Routes />
           </PrivateRoute>
+
+          <PrivateRoute path="/shipment">
+              <Shipment/>
+          </PrivateRoute>
+
+          <PrivateRoute path="/admin">
+              <Admin/>
+          </PrivateRoute>
+          
           <Route path="/login">
             <Login />
           </Route>
@@ -47,6 +61,13 @@ function App() {
             <Home />
           </Route>
         </Switch>
+
+        <Route path='/admin/addProduct'>
+                  <AddProductd></AddProductd>
+                  </Route>
+                  <Route path='/admin/manageProduct'>
+                  <ManageProduct></ManageProduct>
+                  </Route>
     </Router>
     </userContext.Provider>
   );

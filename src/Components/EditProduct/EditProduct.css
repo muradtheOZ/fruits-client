@@ -1,0 +1,14 @@
+.ProductImg{
+    width: 70px;
+}
+.container{
+    display: flex
+}
+.product{
+    padding: 0px 20px;
+
+}
+.btn{
+    padding-left: 30%;
+}
+
