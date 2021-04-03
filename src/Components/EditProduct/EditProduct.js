@@ -29,8 +29,8 @@ const EditProduct = (props) => {
         <p className='product Price'> {price}</p>
 
   <div className="btn">
-  <button className='button'>edit</button>
-    <button onClick={deleteProduct} className='button' value={_id}>delet</button>
+ 
+    <button onClick={deleteProduct} className='button' value={_id}>Delete</button>
   </div>
         </Paper>
       </Grid>
