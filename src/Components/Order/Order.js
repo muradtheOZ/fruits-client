@@ -21,13 +21,6 @@ const Order = () => {
 
     const[orderedFruits,setOrderedFruits] = useState([]);
     
-    const history =  useHistory()
-    const handleCheckOut = (props)=>{
-
-      history.push('/shipment')
-    }
-    
-    
       useEffect(() =>{
         fetch('http://localhost:5000/orderedProducts?email='+loggedInUSer.email)
         .then(response => response.json())
@@ -74,8 +67,6 @@ const Order = () => {
          </div>
 
        </div>
-              
-                <button onClick={() =>handleCheckOut(orderedFruits)}>Check Out</button>
       </div>
 
       </div>

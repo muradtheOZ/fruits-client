@@ -1,21 +1,22 @@
 import './App.css'
-import Header from './Components/Header/Header';
-import Home from './Components/Home/Home';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Routes from './components/Order/Order';
+import Login from './components/LogIn/Login';
+import { createContext,useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Pricing from './components/Pricing/Pricing';
+import Shipment from './components/Shipment/Shipment';
+import Admin from './components/Admin/Admin';
+import AddProductd from "./components/AddProductd/AddProductd";
+import ManageProduct from "./components/ManageProduct/ManageProduct";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Routes from './Components/Order/Order';
-import Login from './Components/Login/Login';
-import { createContext,useState } from 'react';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import Pricing from './Components/Pricing/Pricing';
-import Shipment from './Components/Shipment/Shipment';
-import Admin from './Components/Admin/Admin';
-import AddProductd from "./Components/AddProductd/AddProductd";
-import ManageProduct from "./Components/ManageProduct/ManageProduct";
+import SimpleOrder from './components/SimpleOrder/SimpleOrder';
 export const userContext = createContext();
 
 function App() {
@@ -50,6 +51,10 @@ function App() {
           <PrivateRoute path="/admin">
               <Admin/>
           </PrivateRoute>
+
+          <PrivateRoute path="/fruits/:_id">
+              <SimpleOrder/>
+          </PrivateRoute>
           
           <Route path="/login">
             <Login />
@@ -63,11 +68,11 @@ function App() {
         </Switch>
 
         <Route path='/admin/addProduct'>
-                  <AddProductd></AddProductd>
-                  </Route>
-                  <Route path='/admin/manageProduct'>
-                  <ManageProduct></ManageProduct>
-                  </Route>
+        <AddProductd></AddProductd>
+        </Route>
+        <Route path='/admin/manageProduct'>
+            <ManageProduct></ManageProduct>
+         </Route>
     </Router>
     </userContext.Provider>
   );

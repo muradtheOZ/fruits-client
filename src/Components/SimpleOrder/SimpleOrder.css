@@ -1,0 +1,25 @@
+.sign-up{
+    margin: 30px 100px;
+}
+.sign-up input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius:10px;
+    width:300px;
+
+}
+.error{
+    color: red;
+}
+.custom-padding{
+    padding-top: 10%;
+}
+.custom-border{
+    margin-left: 2px;
+    border-bottom: 1px solid tomato;
+}
+.custom{
+    margin-left: 2px;
+}

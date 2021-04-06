@@ -9,29 +9,13 @@ const Card = (props) => {
     const [transportMode, setTransportMode] = value2;
     const [loggedInUSer, setLoggedInUser] = value;
 
-    const { fruitName, price, photoUrl } = props.fruit;
+    const { fruitName, price, photoUrl, _id } = props.fruit;
     
 
     //Route change and transport mode set
     const history = useHistory()
-    const showRoute = (event) => {
-        if(loggedInUSer.isSigned){
-            const orderedFruitsUser = { ...props.fruit,...loggedInUSer}
-            delete orderedFruitsUser._id;
-            fetch('http://localhost:5000/addProductUser', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(orderedFruitsUser)
-            })
-    
-            history.push('/routes')
-        }
-        else{
-            history.push('/login')
-        }
-       
-    
-    
+    const handleSingleProduct = (event) => {
+        history.push(`/fruits/${_id}`);
     }
 
 
@@ -47,7 +31,7 @@ const Card = (props) => {
                 </div>
                 <div className="card-body d-flex">
                     <h3 className="card-link pe-3">${price}</h3>
-                    <button type="button" className="btn btn-warning pe-3  ms-5 ps-3 " onClick={showRoute}> Buy Now</button>
+                    <button type="button" className="btn btn-warning pe-3  ms-5 ps-3 " onClick={handleSingleProduct}> Buy Now</button>
 
                 </div>
             </div>
