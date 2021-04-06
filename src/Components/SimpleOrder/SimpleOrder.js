@@ -12,7 +12,7 @@ const SimpleOrder = () => {
 
     const {_id} = useParams(); 
     useEffect(() =>{
-        fetch(`http://localhost:5000/fruits/${_id}`)
+        fetch(`https://rocky-savannah-23183.herokuapp.com/fruits/${_id}`)
         .then(res=>res.json())
         .then(result=>{
             const {fruitName,photoUrl,price} =result[0]
@@ -29,7 +29,7 @@ const SimpleOrder = () => {
     const history = useHistory()
     const handleCheckOut = () => {
         const userAddedProduct = {...orderedFruits,...loggedInUSer}
-        fetch('http://localhost:5000/addProductUser',{
+        fetch('https://rocky-savannah-23183.herokuapp.com/addProductUser',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify(userAddedProduct)

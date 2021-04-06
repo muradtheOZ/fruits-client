@@ -19,7 +19,7 @@ const ManageProduct = () => {
     const classes = useStyles();
     const [products, setProducts] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://rocky-savannah-23183.herokuapp.com/products')
         .then(res=>res.json())
         .then(res=>setProducts(res))
     },[])

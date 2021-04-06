@@ -67,7 +67,7 @@ const AddProductd = (event) => {
     const productAdd = (event)=>{
         event.preventDefault();
         delete addedproduct.isBtnDisable;
-        fetch('http://localhost:5000/addProduct',{
+        fetch('https://rocky-savannah-23183.herokuapp.com/addProduct',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify(addedproduct)

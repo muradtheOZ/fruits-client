@@ -22,7 +22,7 @@ const Order = () => {
     const[orderedFruits,setOrderedFruits] = useState([]);
     
       useEffect(() =>{
-        fetch('http://localhost:5000/orderedProducts?email='+loggedInUSer.email)
+        fetch('https://rocky-savannah-23183.herokuapp.com/orderedProducts?email='+loggedInUSer.email)
         .then(response => response.json())
         .then(data =>{
             setOrderedFruits(data)
