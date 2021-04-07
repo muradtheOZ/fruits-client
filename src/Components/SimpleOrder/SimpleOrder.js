@@ -4,6 +4,7 @@ import './SimpleOrder.css';
 import { userContext } from '../../App';
 import Pricing from '../Pricing/Pricing';
 import { Route, useHistory, useParams } from 'react-router';
+import LoadSpin from '../LoadSpin/LoadSpin';
 
 const SimpleOrder = () => {
     const {value,value2,value3,value4} = useContext(userContext);
@@ -38,7 +39,6 @@ const SimpleOrder = () => {
         history.push('/shipment')
     }
     return (
-        
         orderedFruits.fruitName?
         <div className="custom-padding">
             <div className="row container  card p-2 m-2 m-auto">
@@ -82,8 +82,7 @@ const SimpleOrder = () => {
 
         </div>
         :
-        <h1>You didn't add any product</h1>
-        
+        <h4 className="text-center p-5 m-5 container m-auto bg-warning">Please Add some product</h4>
     );
 };
 
