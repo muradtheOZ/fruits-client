@@ -9,7 +9,6 @@ const Home = () => {
     const [fruits, setFruits] = useState([]);
 
 
-<<<<<<< HEAD
     useEffect(() =>{
         fetch('https://rocky-savannah-23183.herokuapp.com/products')
         .then(response => response.json())
@@ -18,16 +17,6 @@ const Home = () => {
             console.log(data);
         });
     },[])
-=======
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(response => response.json())
-            .then(data => {
-                setFruits(data)
-                console.log(data);
-            });
-    }, [])
->>>>>>> second-branch
     return (
         fruits[0] ?
             <div className="bg">
