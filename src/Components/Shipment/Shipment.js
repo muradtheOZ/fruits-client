@@ -13,7 +13,13 @@ const Shipment = () => {
     console.log(watch("example")); // watch input value by passing the name of it
 
     return (
-        <div className="row d-flex">
+        <div className="row d-flex  flex-sm-row-reverse">
+            
+            <div className="col-md-6">
+                <h3 className="p-3 text-center">Your All order</h3>
+                <Order/>
+            </div>
+
             <div className="col-md-5">
             <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" defaultValue={loggedInUSer.name} ref={register({ required: true })} placeholder="Enter your Name" />
@@ -30,11 +36,6 @@ const Shipment = () => {
 
                 <input type="submit" />
             </form>
-            </div>
-
-            <div className="col-md-6">
-                <h3 className="p-3 text-center">Your All order</h3>
-                <Order/>
             </div>
         </div>
     );
