@@ -35,21 +35,8 @@ function Login() {
 
 
 
-  // facebook sign in Handler 
-
-  const fbSignIN = () => {
-    handleFbSignIN()
-      .then(res => {
-        setUser(res);
-        setLoggedInUser(res);
-        history.replace(from);
-      })
-  }
-
   return (
-    <div class="outer ">
-      <div class="middle ">
-        <div class="inner bg-blue">
+    <div class="login-center bg ">
           <div className="text-center">
           <button onClick={googleSignIN} className="custom-button mb-2 mt-2 p-2"><img src="https://img.icons8.com/fluent/50/000000/google-logo.png"/>Continue with Google</button>
           </div>
@@ -57,8 +44,6 @@ function Login() {
           {user.error}
 
         </div>
-      </div>
-    </div>
   );
 }
 

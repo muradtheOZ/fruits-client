@@ -21,8 +21,6 @@ const EditProduct = (props) => {
     return (
         <Grid item xs={12} sm={12} md={12} >
         <Paper style={{height:'100px'}} className='container'>
-      
-      {/* <Loader type="TailSpin" color="#00BFFF" height={80} width={80} /> */}
     
         <img className='ProductImg' src={photoUrl} alt=""/>
         <h4 className='product Name'>{name}</h4>

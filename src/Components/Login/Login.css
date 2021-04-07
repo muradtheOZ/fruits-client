@@ -45,3 +45,14 @@
     font-weight:700;
     
   }
+  .bg{
+    background-color:teal;
+  }
+  .login-center {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+    height: 100%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }

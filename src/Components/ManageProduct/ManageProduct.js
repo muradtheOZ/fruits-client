@@ -27,8 +27,6 @@ const ManageProduct = () => {
    
 
 <div style={{margin:'0px 20%'}}>
-<h3>this is home</h3>
-
 <Grid container spacing={3}>
 
 {

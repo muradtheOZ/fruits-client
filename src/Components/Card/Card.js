@@ -24,7 +24,7 @@ const Card = (props) => {
 
         <div className="col-lg-3 col-md-6 p-4">
 
-            <div className="card">
+            <div className="card shadow">
                 <img className="card-img-top p-2 m-2 custom-img" src={photoUrl} alt="Card image cap" />
                 <div className="card-body">
                     <h5 className="card-title">{fruitName}</h5>
