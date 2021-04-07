@@ -35,16 +35,6 @@ const Order = () => {
       })();
   }, []);
     
-    //   useEffect(() =>{
-    //     fetch('https://rocky-savannah-23183.herokuapp.com/orderedProducts?email='+loggedInUSer.email)
-    //     .then(response => response.json())
-    //     .then(data =>{
-    //         setOrderedFruits(data)
-    //         console.log(data);
-    //     });
-
-        
-    // },[])
 
     {
       orderedFruits.map(fruit => {
