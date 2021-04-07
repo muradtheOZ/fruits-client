@@ -3,6 +3,7 @@ import React from 'react';
 const BuyStore = (props) => {
     
     const {fruitName, price} = props.fruit;
+
     return (
         <div className="row">
         <div className="col-md-6">
@@ -14,6 +15,7 @@ const BuyStore = (props) => {
              <h5 className="ms-auto">{price}</h5>
           </div>
           </div>
+          
     );
 };
 

@@ -20,6 +20,7 @@ const Order = () => {
     const [newUser, setNewUser] = useState(false);
 
     const[orderedFruits,setOrderedFruits] = useState([]);
+    let totalPrice = 0;
     
       useEffect(() =>{
         fetch('https://rocky-savannah-23183.herokuapp.com/orderedProducts?email='+loggedInUSer.email)
@@ -31,6 +32,13 @@ const Order = () => {
 
         
     },[])
+
+    {
+      orderedFruits.map(fruit => {
+        const pricing = parseFloat(fruit.price)
+        totalPrice = totalPrice + pricing;
+      })
+  }
       
     return (
       <div className="custom-padding">
@@ -63,7 +71,7 @@ const Order = () => {
          </div>
 
          <div className="col-md-5 d-flex">
-            <h5 className="ms-auto">{orderedFruits[0]?.price}</h5>
+            <h5 className="ms-auto">{totalPrice}</h5>
          </div>
 
        </div>
