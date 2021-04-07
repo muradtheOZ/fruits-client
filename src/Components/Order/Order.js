@@ -21,17 +21,30 @@ const Order = () => {
 
     const[orderedFruits,setOrderedFruits] = useState([]);
     let totalPrice = 0;
+    useEffect(() => {
+      (async function() {
+          try {
+              const response = await fetch(
+                'https://rocky-savannah-23183.herokuapp.com/orderedProducts?email='+loggedInUSer.email);
+              const json = await response.json();
+              console.log(json);
+              setOrderedFruits(json);
+          } catch (e) {
+              console.error(e);
+          }
+      })();
+  }, []);
     
-      useEffect(() =>{
-        fetch('https://rocky-savannah-23183.herokuapp.com/orderedProducts?email='+loggedInUSer.email)
-        .then(response => response.json())
-        .then(data =>{
-            setOrderedFruits(data)
-            console.log(data);
-        });
+    //   useEffect(() =>{
+    //     fetch('https://rocky-savannah-23183.herokuapp.com/orderedProducts?email='+loggedInUSer.email)
+    //     .then(response => response.json())
+    //     .then(data =>{
+    //         setOrderedFruits(data)
+    //         console.log(data);
+    //     });
 
         
-    },[])
+    // },[])
 
     {
       orderedFruits.map(fruit => {
