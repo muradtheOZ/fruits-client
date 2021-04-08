@@ -17,6 +17,7 @@ const EditProduct = (props) => {
         .then(data=>
         console.log(data)
       )
+      console.log('hello button clicked')
     }
     return (
         <Grid item xs={12} sm={12} md={12} >
