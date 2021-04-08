@@ -10,7 +10,7 @@ const EditProduct = (props) => {
 
     const deleteProduct =(event)=>{
   //  console.log(event.target.value);
-          fetch(`https://rocky-savannah-23183.herokuapp.com/delet/${_id}`,{
+          fetch(`https://rocky-savannah-23183.herokuapp.com/delete/${_id}`,{
             method:'DELETE'
           })
           .then(res=>res.json())

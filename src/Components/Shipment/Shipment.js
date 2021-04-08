@@ -11,11 +11,12 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Button from '@material-ui/core/Button';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import SimpleOrder from '../SimpleOrder/SimpleOrder';
 
 
 const Shipment = () => {
+    const history = useHistory();
     const { register, handleSubmit, watch, errors } = useForm();
     const { value, value3,value4 } = useContext(userContext);
     const [loggedInUSer, setLoggedInUser] = value;
@@ -34,6 +35,7 @@ const Shipment = () => {
       
         const handleClose = () => {
           setOpen(false);
+          history.push('/')
         };
 
     return (
@@ -78,10 +80,7 @@ const Shipment = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Disagree
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Agree
+            Okay
           </Button>
         </DialogActions>
       </Dialog>
