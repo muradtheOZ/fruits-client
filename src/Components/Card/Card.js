@@ -5,8 +5,7 @@ import { userContext } from '../../App';
 
 
 const Card = (props) => {
-    const { value, value2 } = useContext(userContext);
-    const [transportMode, setTransportMode] = value2;
+    const { value, value4 } = useContext(userContext);
     const [loggedInUSer, setLoggedInUser] = value;
 
     const { fruitName, price, photoUrl, _id } = props.fruit;

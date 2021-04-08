@@ -8,11 +8,9 @@ import { Route, useHistory } from 'react-router';
 import BuyStore from '../BuyStore/BuyStore';
 
 const Order = () => {
-  const {value,value2,value3} = useContext(userContext);
+  const {value,value4,value3} = useContext(userContext);
 
     const [loggedInUSer, setLoggedInUser] = value;
-    const[transportMode,setTransportMode] = value2;
-    const [transportInfo,seTTransportInfo] = value3;
      console.log(loggedInUSer.email);
 
   
@@ -44,6 +42,8 @@ const Order = () => {
   }
       
     return (
+      <div>
+      <h5 className="text-center text-primary pt-3">{loggedInUSer.name}, Below is list of your All order</h5>
       <div className="custom-padding">
       <div className="row container  card p-2 m-2 m-auto">
        <div className="row custom-border pt-2 mt-2">
@@ -81,7 +81,7 @@ const Order = () => {
       </div>
 
       </div>
-        
+      </div>
             
     );
 };

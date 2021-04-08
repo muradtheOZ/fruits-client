@@ -6,10 +6,12 @@ import Pricing from '../Pricing/Pricing';
 import { Route, useHistory, useParams } from 'react-router';
 import LoadSpin from '../LoadSpin/LoadSpin';
 
-const SimpleOrder = () => {
+const SimpleOrder = ( props) => {
     const { value, value2, value3, value4 } = useContext(userContext);
     const [loggedInUSer, setLoggedInUser] = value;
     const [orderedFruits, setOrderedFruits] = value4;
+    const [simpleOrder,setSimpleOrder] = value3;
+    console.log("props ki asche", props.check);
 
     const { _id } = useParams();
     useEffect(() => {
@@ -25,6 +27,7 @@ const SimpleOrder = () => {
                 newProduct.photoUrl = photoUrl
                 newProduct.BuingDate = new Date()
                 setOrderedFruits(newProduct)
+                setSimpleOrder(newProduct)
             } catch (e) {
                 console.error(e);
             }
@@ -40,7 +43,7 @@ const SimpleOrder = () => {
             body: JSON.stringify(userAddedProduct)
         })
 
-        history.push('/shipment')
+        history.push(`/shipment/${_id}`)
     }
     return (
         orderedFruits.fruitName ?
@@ -80,8 +83,12 @@ const SimpleOrder = () => {
                         </div>
 
                     </div>
-
+                    {
+                        props.check?
+                        <p></p>
+                   :
                     <button onClick={handleCheckOut}>Check Out</button>
+                }
                 </div>
 
             </div>

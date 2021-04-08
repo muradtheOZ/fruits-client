@@ -17,20 +17,18 @@ import {
   Link
 } from "react-router-dom";
 import SimpleOrder from './components/SimpleOrder/SimpleOrder';
+import Order from './components/Order/Order';
 export const userContext = createContext();
 
 function App() {
   //state saving 
   const [loggedInUSer, setLoggedInUser] = useState({});
-  const[transportMode,setTransportMode] = useState({
-    name:'',
-    price:''
-  });
+  const [simpleOrder,setSimpleOrder] = useState({});
   const[transportInfo,seTTransportInfo] = useState({})
   const[orderedFruits,setOrderedFruits] = useState([]);
   
   return (
-    <userContext.Provider value={{ value: [loggedInUSer,setLoggedInUser], value2: [transportMode,setTransportMode], value3:[transportInfo,seTTransportInfo],value4:[orderedFruits,setOrderedFruits] }}>
+    <userContext.Provider value={{ value: [loggedInUSer,setLoggedInUser],value3:[simpleOrder,setSimpleOrder],value4:[orderedFruits,setOrderedFruits] }}>
     <Router>
     <Header/>
       <Route path="/header">
@@ -44,16 +42,19 @@ function App() {
             <Routes />
           </PrivateRoute>
 
-          <PrivateRoute path="/shipment">
+          <PrivateRoute path="/shipment/:_id">
               <Shipment/>
+          </PrivateRoute>
+          <PrivateRoute path="/fruits/:_id">
+              <SimpleOrder/>
           </PrivateRoute>
 
           <PrivateRoute path="/admin">
               <Admin/>
           </PrivateRoute>
 
-          <PrivateRoute path="/fruits/:_id">
-              <SimpleOrder/>
+          <PrivateRoute path="/order">
+              <Order/>
           </PrivateRoute>
           
           <Route path="/login">

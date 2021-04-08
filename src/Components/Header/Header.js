@@ -4,11 +4,10 @@ import { Link,useHistory } from 'react-router-dom';
 import { userContext } from '../../App';
 
 const Header = () => {
-    const {value,value2} = useContext(userContext);
+    const {value,value4} = useContext(userContext);
     let name;
 
     const [loggedInUSer, setLoggedInUser] = value;
-    const[transportMode,setTransportMode] = value2;
     
     //conditional user name for login button
     loggedInUSer.name?
@@ -16,17 +15,6 @@ const Header = () => {
     :
     name = loggedInUSer.displayName
     
-    //direct destination click default mode selecting as car for empty transport mode and routing
-    const history =  useHistory()
-    const showRoute =()=>{
-        if(transportMode === ''){
-            setTransportMode('car');
-        }
-           
-        history.push('/routes')
-    }
-
-
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -37,8 +25,8 @@ const Header = () => {
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto me-5 ps-4 pe-4 mb-2 mb-lg-0">
                         <Link class="nav-link active ps-4 pe-4" to="/home" aria-current="page" >Home</Link>
-                        <Link class="nav-link ps-4 pe-4"  to="/fruits/}">Product</Link>
-                        <Link class="nav-link ps-4 pe-4" to="/shipment">checkout</Link>
+                        <Link class="nav-link ps-4 pe-4"  to="/order">Order</Link>
+                        <Link class="nav-link ps-4 pe-4" to="/shipment/:_id">checkout</Link>
                         <Link class="nav-link ps-4 pe-4" to="/admin">Admin</Link>
                         <Link class="nav-link ps-4 pe-4" to="/login">{name?name:'Login'}</Link>
                         
