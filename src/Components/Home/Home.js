@@ -7,18 +7,29 @@ import './Home.css'
 
 const Home = () => {
     const [fruits, setFruits] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
-    useEffect(() =>{
+
+    useEffect(() => {
         fetch('https://rocky-savannah-23183.herokuapp.com/products')
-        .then(response => response.json())
-        .then(data =>{
-            setFruits(data)
-            console.log(data);
-        });
-    },[])
+            .then(response => response.json())
+            .then(data => {
+                setFruits(data)
+                setLoading(false);
+                console.log(data);
+
+            });
+
+    }, [])
+    console.log("value of loading", loading);
     return (
-        fruits[0] ?
+        loading ?
+            <div className="center center-text">
+                <LoadSpin />
+            </div>
+
+            :
             <div className="bg">
                 <div className="row me-5 ms-5 customPadding">
                     {
@@ -29,10 +40,6 @@ const Home = () => {
                     }
                 </div>
             </div>
-            :
-                <div className="center center-text">
-                    <LoadSpin />
-                </div>
 
 
 

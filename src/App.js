@@ -1,23 +1,26 @@
-import './App.css'
-import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-import Routes from './components/Order/Order';
-import Login from './components/LogIn/Login';
 import { createContext,useState } from 'react';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Pricing from './components/Pricing/Pricing';
-import Shipment from './components/Shipment/Shipment';
-import Admin from './components/Admin/Admin';
-import AddProductd from "./components/AddProductd/AddProductd";
-import ManageProduct from "./components/ManageProduct/ManageProduct";
+import './App.css';
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home';
+import Order from './Components/Order/Order';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Shipment from './Components/Shipment/Shipment';
+import SimpleOrder from './Components/SimpleOrder/SimpleOrder';
+import Admin from './Components/Admin/Admin';
+import Login from './Components/Login/Login';
+import AddProduct from './Components/AddProductd/AddProductd';
+import ManageProduct from './Components/ManageProduct/ManageProduct'
+import Pricing from './Components/Pricing/Pricing'
+
+
+
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import SimpleOrder from './components/SimpleOrder/SimpleOrder';
-import Order from './components/Order/Order';
 export const userContext = createContext();
 
 function App() {
@@ -39,7 +42,7 @@ function App() {
             <Home/>
           </Route>
           <PrivateRoute path="/routes">
-            <Routes />
+            <Order/>
           </PrivateRoute>
 
           <PrivateRoute path="/shipment/:_id">
@@ -69,7 +72,7 @@ function App() {
         </Switch>
 
         <Route path='/admin/addProduct'>
-        <AddProductd></AddProductd>
+        <AddProduct/>
         </Route>
         <Route path='/admin/manageProduct'>
             <ManageProduct></ManageProduct>
