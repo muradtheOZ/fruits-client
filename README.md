@@ -1,6 +1,6 @@
 ## This My simple online fruit shop
 
-(live Website link)[https://fruity-bd.netlify.app/]
+[live Website link](https://fruity-bd.netlify.app/)
 
 #### server side github link: https://github.com/Porgramming-Hero-web-course/full-stack-server-muradtheOZ
 
