@@ -1,4 +1,4 @@
-## This My simple online fruit shop
+## Eat fruit Be Healthy and hire me!! 
 
 [live Website link](https://fruity-bd.netlify.app/)
 
