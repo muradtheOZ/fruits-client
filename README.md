@@ -2,7 +2,7 @@
 
 [live Website link](https://fruity-bd.netlify.app/)
 
-#### server side github link: https://github.com/Porgramming-Hero-web-course/full-stack-server-muradtheOZ
+#### server side github link:https://github.com/muradtheOZ/fruits-server
 
 ----
 #### Description of Website:
